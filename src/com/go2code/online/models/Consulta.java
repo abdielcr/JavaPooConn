@@ -18,33 +18,27 @@ public class Consulta {
 		conn =conexion.getConnection();
 		Statement st;
 		ResultSet rs;
-		String sql = "SELECT * FROM book";
+		String sql = "SELECT * FROM TPROMVEL WHERE ORDEN='PRUEBA666'";
 		
 		try {
-			
 			st = conn.createStatement();
 			rs = st.executeQuery(sql);
 			while (rs.next()) {
-				
-				System.out.println("Registro"+rs.getString("pruebaRegistro"));
-				System.out.println("Registro"+rs.getString("columnaB"));
-				
+				System.out.println("Registro"+rs.getString("ORDEN"));
+				System.out.println("Registro"+rs.getString("SOLIC"));
 			}
 			
 			conn.close();
 			rs.close();
 			st.close();
-			
 		}catch (SQLException e){
-			
+		//Mensaje error conexion	
 		}
 		
 	}
 	
 	public static void main(String[] args) {
-		
 		mostrar();
-		
 	}
 	
 }
