@@ -7,24 +7,25 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class Conexion {
+public class Conexion { //jdbc:sqlserver://localhost;user=MyUserName;password=*****; jdbc:sqlserver://localhost:1433;integratedSecurity=true;<more properties as required>;
 //Datos de conexion	
-	private static String     url      = "";//Mysql conecction String (jdbc:mysql://localhost/JAVA) DB2/AS400 connection String (jdbc:as400://server/lib,user,pass)
-	private static String     ip400    = "";//Servidor DB
-	private static String     lib400   = "";//Schema-libreria Conexion
-	private static String     user     = "";//User DB
-	private static String     pass     = "";//Pass DB
-	private static String     driver   = "";//Mysql Driver(com.mysql.jdbc.Driver ; DB2/AS400 Driver (com.ibm.as400.access.AS400JDBCDriver)
+	private static String     url      = "jdbc:sqlserver://";//Mysql conecction String (jdbc:mysql://localhost/JAVA) DB2/AS400 connection String (jdbc:as400://server/lib,user,pass)
+	private static String     server   = "vmdb.telnor.com:";//Servidor DB
+	private static String     port     = "1433";//Servidor DB
+	private static String     db   	   = "DirInt";//Schema-libreria Conexion
+	private static String     user     = "dirintusr";//User DB
+	private static String     pass     = "GQks8LYuci";//Pass DB
+	private static String     driver   = "com.microsoft.sqlserver.jdbc.SQLServerDriver";//Mysql Driver(com.mysql.jdbc.Driver ; DB2/AS400 Driver (com.ibm.as400.access.AS400JDBCDriver)
 	private static Connection conexion;
 
 //Generando Conexion	
 	public Conexion() {
 		try {
 			Class.forName(driver);
-			conexion=DriverManager.getConnection(url+ip400+ "/"+lib400 +"/;prompt=false",user,pass);
+			conexion=DriverManager.getConnection(url+server+port,user,pass);
 			System.out.println("Conexion establecida con exito");
 		}catch(ClassNotFoundException | SQLException e ){
-			System.out.println("Conexion Fallida Revisa tu còdigo");
+			System.out.println("Conexion Fallida Revisa tu codigo"+e);
 		}
 	}
 //Retorna Conexion	

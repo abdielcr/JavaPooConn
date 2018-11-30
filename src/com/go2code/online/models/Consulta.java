@@ -18,21 +18,21 @@ public class Consulta {
 		conn =conexion.getConnection();
 		Statement st;
 		ResultSet rs;
-		String sql = "SELECT * FROM TPROMVEL WHERE ORDEN='PRUEBA666'";
+		String sql = "SELECT * FROM Direccion";
 		
 		try {
 			st = conn.createStatement();
 			rs = st.executeQuery(sql);
 			while (rs.next()) {
-				System.out.println("Registro"+rs.getString("ORDEN"));
-				System.out.println("Registro"+rs.getString("SOLIC"));
+				System.out.println("Registro"+rs.getString("pernr"));
+				System.out.println("Registro"+rs.getString("nombre"));
 			}
 			
 			conn.close();
 			rs.close();
 			st.close();
 		}catch (SQLException e){
-		//Mensaje error conexion	
+			System.out.println("Error en la consulta a bd"+e);
 		}
 		
 	}
