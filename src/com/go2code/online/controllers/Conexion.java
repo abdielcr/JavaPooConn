@@ -10,11 +10,11 @@ import java.sql.SQLException;
 public class Conexion { //jdbc:sqlserver://localhost;user=MyUserName;password=*****; jdbc:sqlserver://localhost:1433;integratedSecurity=true;<more properties as required>;
 //Datos de conexion	
 	private static String     url      = "jdbc:sqlserver://";//Mysql conecction String (jdbc:mysql://localhost/JAVA) DB2/AS400 connection String (jdbc:as400://server/lib,user,pass)
-	private static String     server   = "vmdb.telnor.com:";//Servidor DB
-	private static String     port     = "1433";//Servidor DB
-	private static String     db   	   = "DirInt";//Schema-libreria Conexion
-	private static String     user     = "dirintusr";//User DB
-	private static String     pass     = "GQks8LYuci";//Pass DB
+	private static String     server   = "";//Servidor DB
+	private static String     port     = "";//Servidor DB
+	private static String     db   	   = "";//Schema-libreria Conexion
+	private static String     user     = "";//User DB
+	private static String     pass     = "";//Pass DB
 	private static String     driver   = "com.microsoft.sqlserver.jdbc.SQLServerDriver";//Mysql Driver(com.mysql.jdbc.Driver ; DB2/AS400 Driver (com.ibm.as400.access.AS400JDBCDriver)
 	private static Connection conexion;
 
